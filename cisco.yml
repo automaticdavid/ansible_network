@@ -2,6 +2,7 @@
 - name: cisco_remediation_ios
   hosts: all
   connection: local
+  gather_facts: no
   
   tasks:
  
@@ -13,13 +14,13 @@
 #      tags:
 #         - noshut
  
- #   - name: make interface down
- #     ios_interface:
- #       name: "{{ interface_name }}"
- #       enabled: False
- #       state: down
- #     tags:
- #       - shut
+#   - name: make interface down
+#     ios_interface:
+#       name: "{{ interface_name }}"
+#       enabled: False
+#       state: down
+#     tags:
+#       - shut
 
     - name: use config to make interface down 
       ios_config:

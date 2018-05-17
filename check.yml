@@ -1,0 +1,11 @@
+---
+- name: cisco_remediation_ios
+  hosts: all
+  connection: local
+  gather_facts: no
+  
+  tasks:
+ 
+    - name: "Gather Facts"
+      iosos_facts:
+        gather_subset: all
