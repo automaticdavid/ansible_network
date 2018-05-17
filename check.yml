@@ -17,4 +17,4 @@
                               
     - name: "Check mtu"
       debug:
-        var: mtu 
+        msg: mtu 
