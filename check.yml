@@ -13,6 +13,6 @@
 
     - name: "Find MTU"    
       vars:
-        mtu: "{{ ansible_net_interfaces."FastEthernet1/0/3" }}"
+        mtu: "{{ ansible_net_interfaces[FastEthernet1/0/3] }}"
       debug:
         msg: "{{ mtu }}"
