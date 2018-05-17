@@ -2,6 +2,7 @@
 - name: cisco_remediation_ios
   hosts: all
   become: yes
+  connection: local
   
   tasks:
  
@@ -9,6 +10,7 @@
       ios_interface:
         name: "{{ interface_name }}"
         enabled: True
+        state: up
       tags:
          - noshut
  
@@ -16,5 +18,6 @@
       ios_interface:
         name: "{{ interface_name }}"
         enabled: False
+        state: down
       tags:
         - shut
