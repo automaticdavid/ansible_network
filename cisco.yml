@@ -5,21 +5,21 @@
   
   tasks:
  
-    - name: make interface up
-      ios_interface:
-        name: "{{ interface_name }}"
-        enabled: True
-        state: up
-      tags:
-         - noshut
+#    - name: make interface up
+#      ios_interface:
+#        name: "{{ interface_name }}"
+#        enabled: True
+#        state: up
+#      tags:
+#         - noshut
  
-    - name: make interface down
-      ios_interface:
-        name: "{{ interface_name }}"
-        enabled: False
-        state: down
-      tags:
-        - shut
+ #   - name: make interface down
+ #     ios_interface:
+ #       name: "{{ interface_name }}"
+ #       enabled: False
+ #       state: down
+ #     tags:
+ #       - shut
 
     - name: use config to make interface down 
       ios_config:
@@ -27,7 +27,7 @@
           - shutdown
         parents: interface {{ interface_name }}
       tags:
-        - config_shut
+        - shut
 
     - name: use config to make interface up 
       ios_config:
@@ -35,4 +35,4 @@
           - no shutdown
         parents: interface {{ interface_name }}
       tags:
-        - config_noshut
+        - noshut
