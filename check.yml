@@ -15,8 +15,8 @@
       vars:
        interface_port: "{{ interface_port }}"
        interface_values: "{{ ansible_net_interfaces[interface_port] }}"
-      debug:
-        msg: "OK"
+      fail:
+        msg: "Found MTU= {{ interface_values }} and expected {{ expected_mtu }}"
       when:
-        - interface_values.mtu == {{ expected_mtu }}
+        - interface_values.mtu != {{ expected_mtu }}
         
