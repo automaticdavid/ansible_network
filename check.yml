@@ -11,14 +11,10 @@
       ios_facts:
         gather_subset: all
 
-    - name: "Find MTU"    
+    - name: "Find and check MTU"    
       vars:
        interface_port: "{{ interface_port }}"
        interface_values: "{{ ansible_net_interfaces[interface_port] }}"
-      debug:
-        var:  interface_values.mtu
-
-    - name: "Check MTU"
       debug:
         msg: "OK"
       when:
