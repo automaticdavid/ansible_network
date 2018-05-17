@@ -15,5 +15,5 @@
       vars:
        interface_values: "{{ ansible_net_interfaces['FastEthernet1/0/3'] }}"
       debug:
-        var: "{{ interface_values }}"
+        msg: "{{ interface_values }}"
 
