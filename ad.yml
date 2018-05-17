@@ -7,6 +7,11 @@
  
   tasks:
 
+    - name: "Install pre-req module"
+      pip:
+        python-ldap
+
+
     - name: "Check_if_user_is_in_AD"
       ldap_entry:
         dn: CN=RRACINNE,OU=FR-RNS-RUECLAUD,OU=FR,OU=Employees,DC=corp,DC=capgemini,DC=com
