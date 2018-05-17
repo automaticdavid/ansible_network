@@ -20,3 +20,19 @@
         state: down
       tags:
         - shut
+
+    - name: use config to make interface down 
+      ios_config:
+        lines:
+          - shutdown
+        parents: interface {{ interface_name }}
+      tags:
+        - config_shut
+
+    - name: use config to make interface up 
+      ios_config:
+        lines:
+          - no shutdown
+        parents: interface {{ interface_name }}
+      tags:
+        - config_noshut
