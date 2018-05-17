@@ -1,12 +1,15 @@
 ---
-
-- name: cisco_remediation_ios
+ 
+- name: cisco_check_mtu
   hosts: all
   connection: local
   gather_facts: no
-  
-  tasks:
  
+  tasks:
     - name: "Gather Facts"
       ios_facts:
         gather_subset: all
+                              
+    - name: "Check mtu"
+      debug:
+        msg: ansible_facts[ansible_net_interfaces]["FastEthernet1/0/3"]
