@@ -19,7 +19,8 @@
         var:  interface_values.mtu
 
     - name: "Check MTU"
-      msg: "OK"
+      debug:
+        msg: "OK"
       when:
         - interface_values.mtu == {{ expected_mtu }}
         
