@@ -8,13 +8,13 @@
     - name: make interface up
       ios_interface:
         name: "{{ interface_name }}"
-        state: up
+        enabled: True
       tags:
          - noshut
  
     - name: make interface down
       ios_interface:
         name: "{{ interface_name }}"
-        state: down
+        enabled: False
       tags:
         - shut
