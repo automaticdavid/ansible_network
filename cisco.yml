@@ -1,0 +1,19 @@
+---
+- name: cisco_remediation_ios
+  hosts: all
+ 
+  tasks:
+ 
+    - name: make interface up
+      ios_interface:
+        name: "{{ interface_name }}"
+        state: up
+      tags:
+         - noshut
+ 
+    - name: make interface down
+      ios_interface:
+        name: "{{ interface_name }}"
+        state: down
+      tags:
+        - shut
