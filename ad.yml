@@ -1,0 +1,16 @@
+---
+ 
+- name: remove_tower-user_when_not-in-ad
+  hosts: localhost
+  connection: local
+  gather_facts: no
+ 
+  tasks:
+
+    - name: "Check_if_user_is_in_AD"
+      ldap_entry:
+        dn: CN=RRACINNE,OU=FR-RNS-RUECLAUD,OU=FR,OU=Employees,DC=corp,DC=capgemini,DC=com
+      register: ad_user
+        
+    - debug:
+        msg: ad_user
