@@ -1,8 +1,7 @@
 ---
 - name: cisco_remediation_ios
   hosts: all
-  connection: network_cli
- 
+  
   tasks:
  
     - name: make interface up
