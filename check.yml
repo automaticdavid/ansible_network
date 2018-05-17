@@ -15,4 +15,4 @@
       vars:
         mtu: ansible_facts[ansible_net_interfaces]["FastEthernet1/0/3"]
       debug:
-        msg: mtu 
+        msg: "{{ mtu }}"
