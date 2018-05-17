@@ -14,7 +14,5 @@
     - name: "Find MTU"    
       vars:
         mtu: ansible_facts[ansible_net_interfaces]["FastEthernet1/0/3"]
-                              
-    - name: "Check mtu"
       debug:
         msg: mtu 
