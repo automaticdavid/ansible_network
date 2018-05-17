@@ -13,6 +13,6 @@
 
     - name: "Find MTU"    
       vars:
-        mtu: {{ ansible_net_interfaces }}
+        mtu: "{{ ansible_net_interfaces }}"
       debug:
         msg: "{{ mtu }}"
