@@ -1,6 +1,7 @@
 ---
 - name: cisco_remediation_ios
   hosts: all
+  connection: local
  
   tasks:
  
